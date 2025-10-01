@@ -247,7 +247,7 @@ se invece è di potenza:
 se il segnale viene messo in correlazione con se stesso si parla di \textit{autocorrelazione}
 
 \section{Sistemi lti e convoluzione}
-\definizione{Sitema LTI}{
+\begin{definizione}{Sitema LTI}
 	Un sistema è detto LTI se gode di due proprietà:
 	\begin{itemize}
 		\item Linearità:
@@ -261,7 +261,7 @@ se il segnale viene messo in correlazione con se stesso si parla di \textit{auto
 		      \]
 		      ossia applicare ritardare un segnale non modificherà l'otput del sistema, ad eccezione del ritardo
 	\end{itemize}
-}
+\end{definizione}
 
 \subsubsection*{Approssimare un segnale con forme d'onda rettangolari}
 \[
@@ -278,7 +278,7 @@ che facendo tendere $ \Delta T $ a 0 diventa:
 	\int_{-\infty }^{\infty } x\left(\tau \right) \delta \left(t-\tau \right)  \; d \tau = y\left(t\right)
 \]
 
-\definizione{Convoluzione}{
+\begin{definizione}{Convoluzione}
 	L'integrale seguente è detto integrale di convoluzione
 	\[
 		\int_{-\infty }^{\infty } x\left(\tau \right) \delta \left(t-\tau \right)  \; d \tau = y\left(t\right)
@@ -288,7 +288,7 @@ che facendo tendere $ \Delta T $ a 0 diventa:
 		x\left(t\right) * h\left(t\right)
 	\]
 	e si legge $ x\left(t\right) $ convoluito $ y\left(y\right) $
-}
+\end{definizione}
 Graficamente, effettuare la convouzione significa:
 \begin{itemize}
 	\item Ribaltare orizzontalmente il segnale
@@ -338,7 +338,7 @@ Graficamente, effettuare la convouzione significa:
 \end{enumerate}
 \section{Serie e trasformata di Fourier}
 
-\definizione{Serie di Fourier}{
+\begin{definizione}{Serie di Fourier}
 	La serie di fourirer è cosi definita:
 	\[
 		x\left(t\right) = a_0 + \sum_{k} \cos \left(2 \pi k f_0 t + \omega_k  \right)
@@ -357,7 +357,7 @@ Graficamente, effettuare la convouzione significa:
 	\[
 		X_n=\frac{1}{T_0} \int_{-T_0 / 2}^{T_0 / 2} x(t) e^{-j 2 \pi n f_0 t} d t
 	\]
-}
+\end{definizione}
 
 Proprietà serie di fourier:
 \begin{enumerate}
@@ -388,16 +388,16 @@ Proprietà serie di fourier:
 	      NB. date le simmetrie, posso calcolare l'integrale su metà periodo
 \end{enumerate}
 
-\definizione{Trasformata di Fourier}{
-La traformata di Fourier può essere intesa come il limite per $ T_0 \to  \infty  $ della serie di Fourier
-\[
-	w\left(t\right) = \int_{-\infty }^{\infty } X\left(f\right) e ^{ j 2 \pi  f t}df \; dx
-\]
-dove i coefficienti $ X\left(f\right) $ sono:
-\[
-	X\left(f\right) = \int_{-\infty }^{\infty } w\left(t\right)e^{-j_2 \pi  ft} \; dx
-\]
-}
+\begin{definizione}{Trasformata di Fourier}
+	La traformata di Fourier può essere intesa come il limite per $ T_0 \to  \infty  $ della serie di Fourier
+	\[
+		w\left(t\right) = \int_{-\infty }^{\infty } X\left(f\right) e ^{ j 2 \pi  f t}df \; dx
+	\]
+	dove i coefficienti $ X\left(f\right) $ sono:
+	\[
+		X\left(f\right) = \int_{-\infty }^{\infty } w\left(t\right)e^{-j_2 \pi  ft} \; dx
+	\]
+\end{definizione}
 La prima si ottiene facendo il limite per $ x \to  \infty  $ della serie di Fourier:
 \begin{align*}
 	\sum_{k = -\infty}^{\infty} X_ke^{j 2 \pi k f_0 t } & =\sum_{k = -\infty}^{\infty} X_k \frac{T_0}{T_0} e^{j 2 \pi k f_0 t }    \\
@@ -493,30 +493,30 @@ dunque
 \end{enumerate}
 
 \subsection{Energia e banda}
-\teorema{Parseval}{
+\begin{teorema}{Parseval}
 	Dato un segnale periodico, la sua potenza è uguale a:
 	\[
 		P_x = \sum_{k=-\infty }^{\infty} \left|X_n\right|^2
 	\]
-}
+\end{teorema}
 Questo teorema può essere esteso segnali non periodici
-\teorema{Rayleigh}{
+\begin{teorema}{Rayleigh}
 	Dato un segnale aperiodico, la sua energia è uguale a:
 	\[
 		E_x = \int_{-\infty }^{\infty } \left|x\left(t\right)\right|^2  \; dt = \int_{-\infty }^{\infty } \left|X\left(f\right)\right|^2 \; df
 	\]
-}
-\definizione{Larghezza di banda}{
+\end{teorema}
+\begin{definizione}{Larghezza di banda}
 	La larghezza di banda è l'intervallo di frequenze per le quali lo spettro del segnale assume valori non nulli. Per segnali con spettro infinito, si può imporre la larghezza di banda come l'intervalli in cui p contenuto l'$ x $ \% della energia del segnale:
 	\[
 		B: \int_{-B}^{B} \left|X\left(f\right)\right|^2  \; df = 0.99Ex
 	\]
-}
+\end{definizione}
 
 per dualità ho che $ F\left(x\left(t\right)\right) = Y\left(f\right) \rightarrow F\left(Y\left(t\right)\right)= x\left(-f\right) $. Dunque è anche vero che
 \newpage
 \section{Distorsione ed equalizzazione}
-\definizione{Condizione di non distorsione}{
+\begin{definizione}{Condizione di non distorsione}
 	Un sistema è non distorcente se la sua risposta in frequenza è piatta e la sua risposta in fase è lineare (una retta)
 
 	\begin{minipage}[t]{0.48\textwidth}
@@ -540,13 +540,13 @@ per dualità ho che $ F\left(x\left(t\right)\right) = Y\left(f\right) \rightarro
 			\end{axis}
 		\end{tikzpicture}
 	\end{minipage}
-}
-\definizione{Ritardo di gruppo}{
+\end{definizione}
+\begin{definizione}{Ritardo di gruppo}
 	Il ritardo di gruppo(temporale) è dato dallo sfasamento di fase di un segnale:
 	\[
 		\tau_g\left(f\right) = -\frac{d \phi\left(f\right) }{df}
 	\]
-}
+\end{definizione}
 Se il sistema è LTI, allora si può compensare la distorsione applicando un'equalizzazione tale per cui:
 \[
 	H_{\text{ tot }} = H\left(f\right) \cdot  H_{\text{ eq }} = k e ^{-j 2 \pi f t_0}
@@ -614,12 +614,12 @@ Per risalire al segnale originario posso sfruttare un low cut, finestrando la pr
 \end{tikzpicture}
 \vskip3mm
 Questo ricostruisce perfettamente il segnale, ma solo nel caso in cui $ f_c \ge f_{\text{max}} $. Da qui la regola di Nyquist:
-\definizione{Regola di Nyquist}{
+\begin{definizione}{Regola di Nyquist}
 	Per campionare un segnale senza perdita di informazione (aliasing) deve valere che.
 	\[
 		f_c \ge 2 f_{\text{max}} \quad  \text{o equivalentemente} \quad T_c < \frac{1}{2} T_{\text{max}}
 	\]
-}
+\end{definizione}
 
 Per ricostuire il campione mi basta quindi applicare un passa-basso:
 \begin{align*}
@@ -635,13 +635,13 @@ Nella pratica viene usata una tecnica diversa.
 \begin{itemize}
 	\item Siccome $ h_H\left(t\right) $ in frequenza diventa una sinc, le frequenze verranno attenuate. Questo è compensabile tramite un'equalizzazione
 \end{itemize}
-\begin{figure}
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.7\textwidth]{Images/Sample and hold 2.png}
 	\end{center}
 	\caption{Si noti come la curva blu, ossia il filtro di trattenimento attenui le frequenze alte}
 \end{figure}
-\begin{figure}
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.7\textwidth]{Images/Sample and hold 3.png}
 	\end{center}
@@ -662,13 +662,13 @@ chiaramente valor medio nullo
 	E\left\{\varepsilon_q^2\right\}=\sigma_q^2=\int_{-\frac{\Delta}{2}}^{\frac{\Delta}{2}} \varepsilon^2 f_{\varepsilon_q}(\varepsilon) d \varepsilon=\frac{1}{\Delta} \int_{-\frac{\Delta}{2}}^{\frac{\Delta}{2}} \varepsilon^2 d \varepsilon=\left.\frac{1}{\Delta} \frac{\varepsilon^3}{3}\right|_{-\frac{\Delta}{2}} ^{\frac{\Delta}{2}}=\frac{\Delta^2}{12}
 \]
 Per stimare la qualità del segnale di utilizza il rapporto fra potenza di rumore e posenza del segnale:
-\definizione{Rapporto segnale rumore}{
+\begin{definizione}{Rapporto segnale rumore}
 	Il rapporto segnale rumore è così definito:
 	\[
 		\text{SNR} = 10 \log _{10} \left(\frac{S_x}{S_n}\right) \left[\text{db}\right]
 	\]
 	Ogni bit in più usato per rappresentare la quantizzazione corrisponse a circa \underline{6 db} in i più nel $ SNR $
-}
+\end{definizione}
 Salvare segnale è costoso in termini di spazio. Ad esempio per salvare un segnale con $ f_{\text{max}} = 10 kh $ con qualità di almeno 30 db servono:
 \[
 	r_b \ge \underbracket[0.1ex]{2 \cdot  10^{4}}_{\text{Nyquist}} \cdot \underbracket[0.1ex]{\frac{30}{6}}_{\text{db ogni bit in più}} = 10^{5} \left[\frac{\text{bits}}{\text{sec}}\right]
@@ -918,31 +918,31 @@ Osservazioni:
 \end{itemize}
 \subsection{Teorema della convoluzione}
 Siccome operiamo con vettori di lunghezza finita, è necessario rivedere la convoluzione. Abbiamo due tipi di convoluzione:
-\definizione{Convoluzione lineare discreta}{
+\begin{definizione}{Convoluzione lineare discreta}
 	La convoluzione lineare discreta è così definita
 	\[
 		y[n] = x[n] * y[n] = \sum_{k=-\infty}^{\infty} x[k] y[n-k]
 	\]
-}
+\end{definizione}
 Operativamente, prendi i segnali ed aggiungi zeri al più corto finché questo avrà la stessa lunghezza del più lungo ed esegui convoluzione
-\definizione{Convoluzione circolare discreta}{
+\begin{definizione}{Convoluzione circolare discreta}
 	La convoluzione circolare discreta è così definita
 	\[
 		y[n] = x[n] \circledast y[n] = \sum_{k=0}^{N-1} x[k] y[(n-k)]_N
 	\]
 	dove $ y\left[.\right]_N $ indica la periodizzazione di $ y[n] $
-}
+\end{definizione}
 Operativamente, prendi il primo segnale, periodizzalo(duplica lo stesso segnale davanti e dopo) ed esegui convoluzione lineare
-\teorema{Teorema della convoluzione segnali discreti}{
+\begin{teorema}{Teorema della convoluzione segnali discreti}
 	\[
 		x[n] \circledast y[n] \leftrightarrow x[k] \cdot  y[k]
 	\]
-}
+\end{teorema}
 Nota che per far coincidere convoluzione lineare e circolare si possono aggiungere zeri ad entrambi i vettori, facendoli arrivare alla stessa lunghezza.
 \vskip3mm
 Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ aggiungo $ N_y $ zeri e a $ y $ $ N_x $
 \section{Segnali in più dimensioni}
-\definizione{Segnale in più dimensioni}{
+\begin{definizione}{Segnale in più dimensioni}
 	Un segnale in due dimensioni è rappresentato come:
 	\[
 		x\left(v_1,v_2,\ldots , v_N\right): \R_N \to \R_K
@@ -952,9 +952,9 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 		I\left(x,y\right): \R_2 \to  \R_3
 	\]
 	$ \R_2 $ sono le coordinate del pixel, $ \R_3 $ il colore RGB
-}
+\end{definizione}
 
-\definizione{Sistema in più dimensioni}{
+\begin{definizione}{Sistema in più dimensioni}
 	Un sistema in più dimensioni è così definito:
 	\[
 		y(\bar{v})=f(x(\bar{u}))
@@ -964,9 +964,9 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 		x(\bar{u}): \mathbb{R}_N \rightarrow \mathbb{R}_K \quad \quad  y(\bar{v}): \mathbb{R}_M \rightarrow \mathbb{R}_L
 	\]
 	Solitamente $ M=N $ e $ K=L=1 $
-}
+\end{definizione}
 \subsection{Estensione a segnali multidimensionali}
-\definizione{LTI sistema multidimensionale}{
+\begin{definizione}{LTI sistema multidimensionale}
 	Un sistema multidimensionale è lineare se e solo se:
 	\[
 		\left.\begin{array}{c}
@@ -979,16 +979,17 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 	\[
 		f(i(\bar{v}))=\hat{\imath}(\bar{v}) \Rightarrow f\left(i\left(\bar{v}-\bar{v}_0\right)\right)=\hat{\imath}\left(\bar{v}-\bar{v}_0\right) \quad \forall \bar{v}_0 \\
 	\]
-}
-\definizione{Convoluzione in più dimensioni}{
+\end{definizione}
+
+\begin{definizione}{Convoluzione in più dimensioni}
 	La convoluzione in più dimensioni constiste nel applicare la convoluzione su ogni asse indiviadualmente
 	\begin{align*}
 		 & y\left(v_1, v_2, \ldots, v_N\right)=x\left(v_1, v_2, \ldots, v_N\right) * h\left(v_1, v_2, \ldots, v_N\right)=                                                                                                                \\
 		 & \int_{\lambda_1=-\infty}^{+\infty} \ldots \int_{\lambda_N=-\infty}^{+\infty} x\left(\lambda_1, \ldots, \lambda_N\right) \cdot h\left(v_1-\lambda_1, \ldots, v_N-\lambda_N\right) \partial \lambda_1 \ldots \partial \lambda_N
 	\end{align*}
-}
+\end{definizione}
 
-\definizione{Trasformata di Fuorier in più dimensioni}{
+\begin{definizione}{Trasformata di Fuorier in più dimensioni}
 	La trasformata di Fuorier in più dimensioni constiste nel applicare la trasformata su ogni asse indiviadualmente
 	\vskip3mm
 	Trasformata di fuorier \underline{diretta:}
@@ -999,16 +1000,17 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 	\[
 		x\left(v_1, \ldots, v_N\right)=\int_{-\infty}^{+\infty} \ldots \int_{-\infty}^{+\infty} \mathrm{X}\left(f_1, \ldots, f_N\right) e^{j 2 \pi\left(f_1 v_1+\ldots+f_N v_N\right)} d f_1 \ldots d f_N
 	\]
-}
-\definizione{Teorema della convoluzione in più dimensioni}{
+\end{definizione}
+\begin{definizione}{Teorema della convoluzione in più dimensioni}
 	Il teorema della convoluzione rimane invariato in più dimensioni
 	\begin{gather*}
 		y\left(v_1, v_2, \ldots, v_N\right)=x\left(v_1, v_2, \ldots, v_N\right) * h\left(v_1, v_2, \ldots, v_N\right) \\
 		\updownarrow\\
 		\mathrm{Y}\left(f_1, \ldots, f_N\right)=\mathrm{X}\left(f_1, \ldots, f_N\right) \cdot \mathrm{H}\left(f_1, \ldots, f_N\right) \\
 	\end{gather*}
-}
-\definizione{Trasformata di Fourier discreta in più dimensioni}{
+\end{definizione}
+
+\begin{definizione}{Trasformata di Fourier discreta in più dimensioni}
 	La trasformata di Fuorier in più dimensioni constiste nel applicare la trasformata su ogni asse indiviadualmente
 	\vskip3mm
 	Trasformata di fuorier \underline{diretta:}
@@ -1020,7 +1022,8 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 	\[
 		x\left[n_1, \ldots, n_N\right]=\frac{1}{N_1 \cdot \ldots \cdot N_N} \sum_{k_1=0}^{N_1-1} \ldots \sum_{k_N=0}^{N_N-1} X\left[k_1, \ldots, k_N\right] \cdot e^{j 2 \pi\left(\frac{k_1 n_1}{N_1}+\ldots+\frac{k_N n_N}{N_N}\right)}
 	\]
-}
+\end{definizione}
+
 \newpage
 
 
@@ -1032,10 +1035,11 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 {
 \renewcommand{\arraystretch}{1.5}
 \begin{center}
-	\begin{tabular}{| l L | L |}
-		\hline \hline
+	\begin{tabular}{ l L  L }
+
+		\toprule
 		Funzione            & \text{Dominio temporale}                                   & \text{Dominio frequenza}                                                    \\
-		\hline \hline
+		\midrule
 		Impulso             & \delta \left(t- t_0\right)                                 & e ^{ -j 2 \pi  f t_0}                                                       \\[12pt]
 		Costante            & V_0                                                        & V_0 \delta  \left(f\right)                                                  \\[12pt]
 		Seno                & \sin  \left(2 \pi f_0 t\right)                             & \frac{1}{2}\left[\delta\left(f+f_0\right)-\delta\left(f-f_0\right)\right]   \\[12pt]
@@ -1048,7 +1052,7 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 		Impulso triangolare & \left(1-\frac{|t|}{T}\right) \Pi\left(\frac{t}{2 T}\right) & T \operatorname{sinc}^2(f T)                                                \\[12pt]
 		Treno di impulsi    & \sum_{n=-\infty}^{+\infty} \delta\left(t-n T_0\right)      & \sum_{k=-\infty}^{+\infty} \frac{1}{T_0} \delta\left(f-\frac{k}{T_0}\right) \\[12pt]
 		Esponenziale        & e^{-\alpha t} u(t)                                         & \frac{1}{\alpha  + j 2 \pi  f}                                              \\[12pt]
-		\hline
+		\bottomrule
 	\end{tabular}
 \end{center}
 }
@@ -1087,10 +1091,10 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 {
 	\renewcommand{\arraystretch}{1.5}
 	\begin{center}
-		\begin{tabular}{| l L | L |}
-			\hline \hline
+		\begin{tabular}{ l L  L }
+			\toprule
 			Nome funzione                  & \text{Espressione funzione}                                         & \text{Coefficienti } X_n                                     \\
-			\hline \hline
+			\midrule
 			Onda quadra                    &
 			\begin{cases}
 				V_0  & t \in \left[kT, kT + \frac{T}{2} \right]      \\
@@ -1109,7 +1113,7 @@ Suppondendo che i due vettori siano lunghi $ N_x $ e $ N_y $, allora a $ x $ agg
 			                               &
 			\frac{V_0 \tau }{T_0} \operatorname{sinc} \left(k f_0 \tau \right)                                                                                                  \\[12pt]
 			Onda triangolare               & V_0 \Lambda \left(\frac{t}{T}\right) \text{ripetuta periodicamente} & \frac{V_0}{2} \operatorname{sinc}^2 \left(\frac{k}{2}\right) \\[12pt]
-			\hline
+			\bottomrule
 		\end{tabular}
 	\end{center}
 }
