@@ -1,12 +1,10 @@
 %&../.preamble
-\endofdump
+\externalize{../.preamble}
 
 \usetikzlibrary{external}
 \usepackage{contour}
 \usepackage{multirow}
 
-\tikzset{external/system call={pdflatex --shell-escape --fmt=../.preamble --halt-on-error -jobname "\image" "\endofdump\texsource"}}
-\tikzexternalize[prefix=tikz/]
 
 \title{Fondamenti di elaborazione di segnali}
 \author{Marini Mattia}
